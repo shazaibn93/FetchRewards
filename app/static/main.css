@@ -1,0 +1,80 @@
+/* Just some random css to make thing a little less (or more) ugly */
+
+
+.container{
+    width:100vw;
+    height:100vh;
+
+    font-family: 'Quicksand', san-serif;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.navbar{
+    background: rgba(255, 255, 255, 0.4);
+    border: none;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.navbar-nav {
+    float: right;
+}
+
+.navbar-brand {
+    color: rgb(183, 194, 255);
+}
+
+.collapse {
+    display: flex;
+    float: right;
+}
+
+.nav-link {
+    color:goldenrod;
+    float: right;
+}
+
+body{
+    border:none !important;
+    background-size: cover;
+    background-position:center top;
+    background-attachment: fixed;
+    
+    color:rgb(127, 144, 244,);
+}
+
+.card {
+    display:flex;
+    background: rgba(0, 0, 0, 0.738);
+}
+
+.card-title {
+    text-align: center;
+    color: rgb(112, 131, 243);
+}
+
+.top {
+    text-align: center;
+    text-shadow: 20px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.whole {
+    display: flex;
+    align-content: center;
+    
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    color: rgb(112, 131, 243);
+}

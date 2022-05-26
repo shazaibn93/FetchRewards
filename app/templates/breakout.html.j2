@@ -1,0 +1,32 @@
+{% extends 'base.html.j2' %}
+
+{%block title%}
+    Totals per Payer
+{%endblock%}
+
+{% block content %}
+    <h1>Here are the total points for each Payer</h1>
+   
+<hr>
+    <div>
+        {%if individuals %}
+            <div class = 'whole'>
+                {% for x in individuals%}
+                    <div class = 'row'>
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">{{x}}</h5>
+                                <p class="card-text">
+                                    <ul>
+                                        <li>Total Points: {{individuals[x]}}</li>
+                                        
+                                    </ul>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                {%endfor%}
+            </div>  
+        {% endif %}
+    </div>
+{%endblock%}

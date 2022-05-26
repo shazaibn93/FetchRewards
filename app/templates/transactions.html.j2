@@ -1,0 +1,48 @@
+{% extends 'base.html.j2' %}
+
+{%block title%}
+    Your Team
+{%endblock%}
+
+{% block content %}
+    <h1>Create some transactions</h1>
+    <form action = "{{url_for('transactions')}}" method = "POST">
+    {{form.hidden_tag()}}
+     <div>
+        <h6>{{form.payer.label(class="form-label")}}</h6>
+        {{form.payer(class="form-control")}}
+        {% for error in form.payer.errors%}
+            <small style = "color:red;">{{error}}</small>
+        {%endfor%}
+    </div>
+    &nbsp;
+    <div>
+        <h6>{{form.pointsgained.label(class="form-label")}}</h6>
+        {{form.pointsgained(class="form-control")}}
+        {% for error in form.pointsgained.errors%}
+            <small style = "color:red;">{{error}}</small>
+        {%endfor%}
+    </div>
+    &nbsp;
+    <div>
+        {{form.submit(class="btn btn-primary form-control")}}
+    </div>
+<hr>
+    <div>
+        {%if transactions %}
+            {% for t in transactions%}
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">{{t.payer}}</h5>
+                        <p class="card-text">
+                            <ul>
+                                <li>Points Earned: {{t.points}}</li>
+                                <li>Time: {{t.now}}</li>
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+            {%endfor%}
+        {% endif %}
+    </div>
+{%endblock%}

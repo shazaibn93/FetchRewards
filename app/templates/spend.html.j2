@@ -1,0 +1,38 @@
+{% extends 'base.html.j2' %}
+
+{%block title%}
+    Your Team
+{%endblock%}
+
+{% block content %}
+    <h1>Lets spend some points!</h1>
+    <form action = "{{url_for('spend')}}" method = "POST">
+    {{form.hidden_tag()}}
+     <div>
+        <h6>{{form.pointsspent.label(class="form-label")}}</h6>
+        {{form.pointsspent(class="form-control")}}
+        {% for error in form.pointsspent.errors%}
+            <small style = "color:red;">{{error}}</small>
+        {%endfor%}
+    </div>
+    &nbsp;
+    <div>
+        {{form.submit(class="btn btn-primary form-control")}}
+    </div>
+<hr>
+    <div>
+        {%if new %}
+            {% for t in new.items()%}
+                <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">{{t}}</h5>
+                    <p class="card-text">
+                        <ul>
+                            <li>Totals remaining: {{new[t]}}</li>
+                        </ul>
+                    </p>
+                </div>
+            {%endfor%}  
+        {% endif %}
+    </div>
+{%endblock%}
